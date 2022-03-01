@@ -5,10 +5,15 @@
 
 # Результаты
 - Результаты с английским словом:
+
     ![ITMO highpark](https://user-images.githubusercontent.com/54194511/156247820-897624ed-786c-41fd-a17a-889de4fc792a.PNG)
+    
 - Результаты с русским словом:
+
     ![ITMO highpark2](https://user-images.githubusercontent.com/54194511/156247902-29083cc8-fd73-42b2-a8a6-6c5dd54f737a.PNG)
+    
 - Результаты с одним предложением:
+
     ![text dai](https://user-images.githubusercontent.com/54194511/156247960-bbabf998-73f8-4de7-bccf-71dcb62664c7.PNG)
     
  - время выполнения: Время работы программы обычно составляет 40-60 секунд, потому что программное обеспечение преобразует файлы PDF в виде изображений в файлы PDF в текстовой форме.
