@@ -12,7 +12,7 @@
     ![text dai](https://user-images.githubusercontent.com/54194511/156247960-bbabf998-73f8-4de7-bccf-71dcb62664c7.PNG)
     
  - время выполнения: Время работы программы обычно составляет 40-60 секунд, потому что программное обеспечение преобразует файлы PDF в виде изображений в файлы PDF в текстовой форме.
- - Программное обеспечение поддержки: 
+ - Пакеты: 
       +  IronOCR - version: 2022.1.0
       +  IronOcr.Languages.Russian - version: 2020.11.2
       +  pdf-extract - version: 1.0.1
