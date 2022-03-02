@@ -11,13 +11,9 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Aspose.Pdf;
-using GrapeCity.Documents.Common;
-using GrapeCity.Documents.Pdf;
-using GrapeCity.Documents.Text;
 using IronOcr;
-using iTextSharp.text.pdf;
 using PdfExtract;
+
 
 namespace SauronEYE
 {
@@ -73,7 +69,7 @@ namespace SauronEYE
 
         private void Filter_Work(string pattern)
         {
-            
+
             List<Regex> filters = new List<Regex>();
 
             foreach (Match filter in patternParser.Matches(pattern))
@@ -109,12 +105,12 @@ namespace SauronEYE
                     else
                     {
                         total = Math.Max(filter.Matches(info.Content).Count, filter.Matches(info.SoureFile2).Count);
-                        countFileFound += 1;
                     }
                 }
                 
                 if (ok)
                 {
+                    countFileFound += 1;
                     string[] arr = new string[5];
                     ListViewItem itm;
 
@@ -139,7 +135,7 @@ namespace SauronEYE
 
             foreach (string file in files)
             {
-
+                
                 countFilePDF += 1;
                 FileInfo fi = new FileInfo(file);
 
@@ -156,18 +152,16 @@ namespace SauronEYE
                     {
                         info.SoureFile2 = extractor.ExtractToString(pdfStream).ToLower();
                     }
-                        /*info.Content = extractor.ExtractToString(pdfStream).ToLower();
-                        //Files.Add(info);
-                    }
-                }
-                catch { }*/
+                      
            
                     using (var extractor = new Extractor())
                     {
-                        
+                        // Choose languages
                         var Ocr = new IronTesseract();
-                        Ocr.Language = OcrLanguage.English;
-                        Ocr.AddSecondaryLanguage(OcrLanguage.Russian);
+                        Ocr.Language = OcrLanguage.Russian;
+                        Ocr.AddSecondaryLanguage(OcrLanguage.English);
+
+
                         using (var Input = new OcrInput(file))
                         {
                             // Input.DeNoise(); // fixes digital noise and poor scanning
@@ -175,8 +169,10 @@ namespace SauronEYE
                             var Result = Ocr.Read(Input);
                             info.Content = Result.Text.ToLower();
                         }
+
                         char[] delimiters = new char[] { ' ', '\r', '\n' };
                         info.IndexedCharacters = info.Content.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length.ToString();
+
                         Files.Add(info);
                     }
                 }
@@ -278,6 +274,7 @@ namespace SauronEYE
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
+            
             listView.Items.Clear();
             FileBox.Visible = false;
             TotalBox.Visible = false;
