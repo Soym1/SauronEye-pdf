@@ -130,7 +130,6 @@ namespace SauronEYE
         private void CreateIndex(string path)
         {
 
-
             string[] files = Directory.GetFiles(path, "*.pdf", SearchOption.AllDirectories);
 
             foreach (string file in files)
@@ -145,41 +144,37 @@ namespace SauronEYE
                 info.FileName = fi.Name;
                 info.Size = $"{fi.Length / 1024}k";
 
-                try
+            
+                using (var pdfStream = File.OpenRead(file))
+                using (var extractor = new Extractor())
                 {
-                    using (var pdfStream = File.OpenRead(file))
-                    using (var extractor = new Extractor())
-                    {
-                        info.SoureFile2 = extractor.ExtractToString(pdfStream).ToLower();
-                    }
-                      
-           
-                    using (var extractor = new Extractor())
-                    {
-                        // Choose languages
-                        var Ocr = new IronTesseract();
-                        Ocr.Language = OcrLanguage.Russian;
-                        Ocr.AddSecondaryLanguage(OcrLanguage.English);
+                    info.SoureFile2 = extractor.ExtractToString(pdfStream).ToLower();
 
-
-                        using (var Input = new OcrInput(file))
-                        {
-                            // Input.DeNoise(); // fixes digital noise and poor scanning
-                            // Input.Deskew();  // fixes rotation and perspective
-                            var Result = Ocr.Read(Input);
-                            info.Content = Result.Text.ToLower();
-                        }
-
-                        char[] delimiters = new char[] { ' ', '\r', '\n' };
-                        info.IndexedCharacters = info.Content.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length.ToString();
-
-                        Files.Add(info);
-                    }
                 }
-                catch { }
-                   
+
+                using (var extractor = new Extractor())
+                {
+                    // Choose languages
+                    var Ocr = new IronTesseract();
+                    Ocr.Language = OcrLanguage.Russian;
+                    Ocr.AddSecondaryLanguage(OcrLanguage.English);
 
 
+                    using (var Input = new OcrInput(file))
+                    {
+                        // Input.DeNoise(); // fixes digital noise and poor scanning
+                        // Input.Deskew();  // fixes rotation and perspective
+                        var Result = Ocr.Read(Input);
+                        info.Content = Result.Text.ToLower();
+                        
+                    }
+
+                    char[] delimiters = new char[] { ' ', '\r', '\n' };
+                    info.IndexedCharacters = info.Content.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length.ToString();
+
+                    Files.Add(info);
+                }
+           
             }
         }
 
@@ -204,6 +199,7 @@ namespace SauronEYE
             listView.Columns.Add("TotalWorld", 100);
             listView.View = View.Details;
             Stopwatch sw = new Stopwatch();
+
             Files.Clear();
 
             sw.Start();

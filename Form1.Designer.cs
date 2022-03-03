@@ -113,7 +113,7 @@ namespace SauronEYE
             // FileFound
             // 
             this.FileFound.AutoSize = true;
-            this.FileFound.Location = new System.Drawing.Point(35, 405);
+            this.FileFound.Location = new System.Drawing.Point(186, 404);
             this.FileFound.Name = "FileFound";
             this.FileFound.Size = new System.Drawing.Size(67, 13);
             this.FileFound.TabIndex = 7;
@@ -141,7 +141,7 @@ namespace SauronEYE
             // 
             this.FileBox.BackColor = System.Drawing.SystemColors.MenuBar;
             this.FileBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.FileBox.Location = new System.Drawing.Point(105, 404);
+            this.FileBox.Location = new System.Drawing.Point(91, 405);
             this.FileBox.Name = "FileBox";
             this.FileBox.Size = new System.Drawing.Size(90, 13);
             this.FileBox.TabIndex = 10;
@@ -158,7 +158,7 @@ namespace SauronEYE
             // Total
             // 
             this.Total.AutoSize = true;
-            this.Total.Location = new System.Drawing.Point(189, 407);
+            this.Total.Location = new System.Drawing.Point(35, 404);
             this.Total.Name = "Total";
             this.Total.Size = new System.Drawing.Size(58, 13);
             this.Total.TabIndex = 11;
@@ -207,6 +207,7 @@ namespace SauronEYE
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SauronEYE";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
