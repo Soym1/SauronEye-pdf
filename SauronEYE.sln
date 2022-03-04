@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SauronEYE", "SauronEYE.csproj", "{ECD97C78-E7A4-427D-A9CB-D9C15BD3C2E8}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup1\Setup1.vdproj", "{2F191CA3-F25D-4BCF-A14C-11454301FC57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{ECD97C78-E7A4-427D-A9CB-D9C15BD3C2E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECD97C78-E7A4-427D-A9CB-D9C15BD3C2E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECD97C78-E7A4-427D-A9CB-D9C15BD3C2E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F191CA3-F25D-4BCF-A14C-11454301FC57}.Debug|Any CPU.ActiveCfg = Debug
+		{2F191CA3-F25D-4BCF-A14C-11454301FC57}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

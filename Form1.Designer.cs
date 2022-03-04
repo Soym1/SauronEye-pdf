@@ -29,6 +29,7 @@ namespace SauronEYE
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textPath = new System.Windows.Forms.TextBox();
@@ -113,7 +114,7 @@ namespace SauronEYE
             // FileFound
             // 
             this.FileFound.AutoSize = true;
-            this.FileFound.Location = new System.Drawing.Point(186, 404);
+            this.FileFound.Location = new System.Drawing.Point(188, 404);
             this.FileFound.Name = "FileFound";
             this.FileFound.Size = new System.Drawing.Size(67, 13);
             this.FileFound.TabIndex = 7;
@@ -122,7 +123,7 @@ namespace SauronEYE
             // Time
             // 
             this.Time.AutoSize = true;
-            this.Time.Location = new System.Drawing.Point(355, 405);
+            this.Time.Location = new System.Drawing.Point(357, 405);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(33, 13);
             this.Time.TabIndex = 8;
@@ -141,7 +142,7 @@ namespace SauronEYE
             // 
             this.FileBox.BackColor = System.Drawing.SystemColors.MenuBar;
             this.FileBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.FileBox.Location = new System.Drawing.Point(91, 405);
+            this.FileBox.Location = new System.Drawing.Point(95, 405);
             this.FileBox.Name = "FileBox";
             this.FileBox.Size = new System.Drawing.Size(90, 13);
             this.FileBox.TabIndex = 10;
@@ -150,7 +151,7 @@ namespace SauronEYE
             // 
             this.TotalBox.BackColor = System.Drawing.SystemColors.MenuBar;
             this.TotalBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TotalBox.Location = new System.Drawing.Point(259, 406);
+            this.TotalBox.Location = new System.Drawing.Point(261, 406);
             this.TotalBox.Name = "TotalBox";
             this.TotalBox.Size = new System.Drawing.Size(90, 13);
             this.TotalBox.TabIndex = 12;
@@ -204,6 +205,7 @@ namespace SauronEYE
             this.Controls.Add(this.textPath);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SauronEYE";

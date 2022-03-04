@@ -49,7 +49,7 @@ namespace SauronEYE
             listView.Columns.Add("Size", 100);
             listView.Columns.Add("Path", 200);
             listView.Columns.Add("Amout", 100);
-            listView.Columns.Add("TotalWorld", 100);
+            listView.Columns.Add("TotalWords", 100);
             listView.View = View.Details;
 
             Time.Visible = false;
@@ -162,8 +162,8 @@ namespace SauronEYE
 
                     using (var Input = new OcrInput(file))
                     {
-                        // Input.DeNoise(); // fixes digital noise and poor scanning
-                        // Input.Deskew();  // fixes rotation and perspective
+                        //Input.DeNoise(); // fixes digital noise and poor scanning
+                        //Input.Deskew();  // fixes rotation and perspective
                         var Result = Ocr.Read(Input);
                         info.Content = Result.Text.ToLower();
                         
@@ -196,7 +196,7 @@ namespace SauronEYE
             listView.Columns.Add("Size", 100);
             listView.Columns.Add("Path", 200);
             listView.Columns.Add("Amout", 100);
-            listView.Columns.Add("TotalWorld", 100);
+            listView.Columns.Add("TotalWords", 100);
             listView.View = View.Details;
             Stopwatch sw = new Stopwatch();
 
@@ -270,7 +270,6 @@ namespace SauronEYE
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            
             listView.Items.Clear();
             FileBox.Visible = false;
             TotalBox.Visible = false;
